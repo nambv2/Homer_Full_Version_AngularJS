@@ -1,0 +1,106 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Thêm mới: sản phẩm<span class="o_subtitle text-muted small"></span></h4>
+    </div>
+    <div class="modal-body o_act_window">
+    	<div>
+    		<div class="o_form_view o_form_editable">
+    			<div class="o_form_sheet_bg">
+    				<div class="o_form_sheet">
+    					<div class="oe_title">
+    						<h1>
+    							<div class="o_field_clearbit dropdown open o_field_widget o_required_modifier" name="name">
+    								<input class="o_input" type="text" placeholder="Tên sản phẩm" id="o_field_input_97">
+    							</div>
+    						</h1>
+    					</div>
+    					<div class="o_group row">
+    						<table class="o_group o_inner_group o_group_col_6 col-md-6">
+    							<tbody>
+    								<tr>
+    									<td class="o_td_label">
+    										<label class="o_form_label " for="o_field_input_306" data-original-title="" title="">Mã vật tư</label>
+    									</td>
+    									<td style="width: 100%;"><input class="o_field_char o_field_widget o_input" name="function" type="text"  id="o_field_input_315"></td>
+    								</tr>
+    								<!-- <tr>
+    									<td class="o_td_label">
+    										<label class="o_form_label " for="o_field_input_306" data-original-title="" title="">Email</label>
+    									</td>
+    									<td style="width: 100%;"><input class="o_field_char o_field_widget o_input" name="function" type="text"  id="o_field_input_315"></td>
+    								</tr> -->
+    							</tbody>
+    						</table>
+    					</div>
+    					<div class="o_notebook">
+    						<ul class="nav nav-tabs">
+		                      <li class="active">
+		                         <a data-toggle="tab" disable_anchor="true" href="#notebook_page_36" role="tab" aria-expanded="true">Thông tin chính</a>
+		                      </li>
+		                      <li class>
+		                         <a data-toggle="tab" disable_anchor="true" href="#notebook_page_47" role="tab" aria-expanded="false">Khác</a>
+		                      </li>
+		                   </ul>
+		                   <div class="tab-content nav nav-tabs">
+		                   		<div class="tab-pane active" id="notebook_page_36">
+		                   			<div class="tab-pane active" id="notebook_page_666">
+									   <div class="o_group">
+									      <table class="o_group o_inner_group o_group_col_6">
+									         <tbody>
+									            <tr>
+									               <td class="o_td_label"><label class="o_form_label o_required_modifier" for="o_field_input_667" data-original-title="" title="">Đơn vị tính</label></td>
+									               <td style="width: 100%;">
+		                                    <div class="o_field_widget o_field_many2one o_required_modifier" name="partner_id">
+		                                       <div class="o_input_dropdown">
+		                                          <input ng-click="measurementUnit()" class="o_input ui-autocomplete-input" type="text" id="o_field_input_28">
+		                                          <span class="o_dropdown_button" draggable="false"></span>
+		                                       </div>
+		                                    </div>
+		                                 </td>
+									            </tr>
+									            <tr>
+									               <td class="o_td_label"><label class="o_form_label o_required_modifier" for="o_field_input_667" data-original-title="" title="">Loại vật tư</label></td>
+									               <td style="width: 100%;">
+									                  <div class="o_field_widget o_field_many2one o_required_modifier" name="partner_id">
+		                                       <div class="o_input_dropdown">
+		                                          <input ng-click="listCategories()" class="o_input ui-autocomplete-input" type="text" id="o_field_input_28">
+		                                          <span class="o_dropdown_button" draggable="false"></span>
+		                                       </div>
+		                                    </div>
+		                                 </td>
+									               </td>
+									            </tr>
+									            <tr>
+									               <td class="o_td_label"><label class="o_form_label o_required_modifier" for="o_field_input_667" data-original-title="" title="">Tài khoản vật tư</label></td>
+									               <td style="width: 100%;">
+									                  <div class="o_field_widget o_field_many2one o_required_modifier" name="partner_id">
+		                                       <div class="o_input_dropdown">
+		                                          <input ng-click="listAccounts()" class="o_input ui-autocomplete-input" type="text" id="o_field_input_28">
+		                                          <span class="o_dropdown_button" draggable="false"></span>
+		                                       </div>
+		                                    </div>
+		                                 </td>
+									               </td>
+									            </tr>
+									         </tbody>
+									      </table>
+									   </div>
+									</div>
+		                   		</div>
+		                   		<div class="tab-pane" id="notebook_page_47">
+		                   			thông tin khác
+		                   		</div>
+		                   </div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel()">Hủy bỏ</button>
+        <button type="button" class="btn btn-primary" ng-click="ok()">Lưu</button>
+    </div>
+</div>
+

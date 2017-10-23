@@ -1,0 +1,109 @@
+<div ng-controller="listBills">
+   <nav class="navbar navbar-default navbar-fixed-top" id="header">
+    <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a class="page-scroll" page-scroll data-toggle="dropdown">Trang chủ</a></li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Bán Hàng<span class="caret"></span></a>
+
+                   <ul class="dropdown-menu">
+                  <li><a ng-click="open3('lg')"><b>Hóa đơn bán hàng thu tiền ngay</b></a></li>
+                  <li><a href="#"><b>Hóa đơn bán chịu</b></a></li>
+                  <li><a href="#"><b>Thu tiền nợ</b></a></li>
+                  <li><a href="#"><b>Rút tiền gửi ngân hàng về nhập quỹ</b></a></li>
+                  <li><a href="#"><b>Thu khác</b></a></li>
+                </ul>
+                </li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Mua hàng</a></li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Báo Cáo</a></li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Tổng hợp</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="o_control_panel">
+   <ol class="breadcrumb">
+   	<li class="o_back_button">
+   		<a>Bán hàng</a>
+   	</li>
+   	<li class="active">Tạo mới</li>
+   </ol>
+   <div class="o_cp_searchview" style="display: block;">
+	   <div class="o_searchview">
+	      <input class="o_searchview_input" placeholder="Search..." type="text">
+	   </div>
+	</div>
+   <div class="o_cp_left">
+      <div class="o_cp_buttons">
+         <div>
+            <div class="o_form_buttons_edit">
+               <button accesskey="s" class="btn btn-primary btn-sm o_form_button_save" type="button">
+                  Lưu
+              </button>
+              <button accesskey="s" class="btn btn-default btn-sm o_form_button_save" type="button">
+                  Hủy
+              </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Main Wrapper -->
+<div id="wrapper">
+	<div class="o_content">
+    <div class="o_view_manager_content o_view_manager_content_custom">
+        <div>
+            <div class="table-responsive">
+                <table class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
+                    <thead>
+                        <tr>
+                            <th width="1" class="o_list_record_selector">
+                                <div class="o_checkbox">
+                                    <input type="checkbox"><span></span></div>
+                            </th>
+                            <th class="o_column_sortable">Khách hàng</th>
+                            <th class="o_column_sortable">Ngày giao dịch</th>
+                            <th class="o_column_sortable">Số hóa đơn</th>
+                            <th class="o_column_sortable">Ngày đáo hạn</th>
+                            <th class="o_column_sortable">Tổng</th>
+                            <th class="o_column_sortable">Phải thanh toán</th>
+                            <th class="o_column_sortable">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="o_data_row" ng-repeat="bill in bills">
+                            <td width="1" class="o_list_record_selector">
+                                <div class="o_checkbox">
+                                    <input type="checkbox"><span></span></div>
+                            </td>
+                            <td class="o_data_cell o_readonly_modifier o_required_modifier">{{bill.a1}}</td>
+                            <td class="o_data_cell o_readonly_modifier">{{bill.a2}}</td>
+                            <td class="o_data_cell o_readonly_modifier">{{bill.a3}}</td>
+                            <td class="o_data_cell o_readonly_modifier">{{bill.a4}}</td>
+                            <td class="o_data_cell o_list_number o_readonly_modifier">$&nbsp;{{bill.a5}}</td>
+                            <td class="o_data_cell o_list_number o_readonly_modifier">$&nbsp;{{bill.a6}}</td>
+                            <td class="o_data_cell o_readonly_modifier">{{bill.a7}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="10">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="o_list_number" title="Total">15,763.99</td>
+                            <td class="o_list_number" title="To pay">15,749.99</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

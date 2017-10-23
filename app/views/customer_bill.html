@@ -1,0 +1,261 @@
+<div ng-controller="customerCtrl">
+   <nav class="navbar navbar-default navbar-fixed-top" id="header">
+    <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a class="page-scroll" page-scroll data-toggle="dropdown">Trang chủ</a></li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Bán Hàng<span class="caret"></span></a>
+
+                   <ul class="dropdown-menu">
+                  <li><a ng-click="open3('lg')"><b>Hóa đơn bán hàng thu tiền ngay</b></a></li>
+                  <li><a href="#"><b>Hóa đơn bán chịu</b></a></li>
+                  <li><a href="#"><b>Thu tiền nợ</b></a></li>
+                  <li><a href="#"><b>Rút tiền gửi ngân hàng về nhập quỹ</b></a></li>
+                  <li><a href="#"><b>Thu khác</b></a></li>
+                </ul>
+                </li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Mua hàng</a></li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Báo Cáo</a></li>
+                <li><a class="page-scroll" page-scroll data-toggle="dropdown">Tổng hợp</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="o_control_panel o_breadcrumb_full">
+   <ol class="breadcrumb"><li class="o_back_button"><a>Bán hàng</a></li><li class="active">Tạo mới</li></ol>
+   <div class="o_cp_left">
+      <div class="o_cp_buttons">
+         <div>
+            <div class="o_form_buttons_edit">
+               <button accesskey="s" class="btn btn-primary btn-sm o_form_button_save" type="button">
+                  Lưu
+              </button>
+              <button accesskey="s" class="btn btn-default btn-sm o_form_button_save" type="button">
+                  Hủy
+              </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Main Wrapper -->
+<div id="wrapper">
+
+<div class="content" animate-panel effect="zoomIn">
+<div class="row o_form_view" style="margin-left: 80px;margin-right: 80px;">
+    <div class="col-lg-12 ">
+        <div class="hpanel">
+            <div class="panel-body">
+                <div class="o_form_sheet">
+                    <div class="o_group">
+                        <table class="o_group o_inner_group o_group_col_6" style="width: 49%;">
+                           <tbody>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label o_required_modifier" for="o_field_input_28">Khách hàng</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_field_widget o_field_many2one o_required_modifier" name="partner_id">
+                                       <div class="o_input_dropdown">
+                                          <input ng-click="listVendors()" class="o_input ui-autocomplete-input" type="text" id="o_field_input_28">
+                                          <span class="o_dropdown_button" draggable="false"></span>
+                                       </div>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_29" data-original-title="" title="">Địa chỉ người mua</label></td>
+                                 <td style="width: 100%;"><input class="o_field_char o_field_widget o_input" name="reference" type="text" placeholder="" id="o_field_input_29"></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <table class="o_group o_inner_group o_group_col_6">
+                           <tbody>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_31" data-original-title="" title="">Ngày lập</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_datepicker o_field_date o_field_widget" id="o_div_input_31" name="date_invoice">
+                                       <input class="o_datepicker_input o_input" type="text" name="date_invoice" placeholder="" id="o_field_input_31">
+                                       <span class="o_datepicker_button"></span>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_32" data-original-title="" title="">Ngày hạch toán</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_datepicker o_field_date o_field_widget" id="o_div_input_32" name="date_due">
+                                       <input class="o_datepicker_input o_input" type="text" name="date_due" placeholder="" id="o_field_input_32">
+                                       <span class="o_datepicker_button"></span>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label o_required_modifier" for="o_field_input_28">Nhân viên bán hàng</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_field_widget o_field_many2one o_required_modifier" name="partner_id">
+                                       <div class="o_input_dropdown">
+                                          <input ng-click="listSalePersons()" class="o_input ui-autocomplete-input" type="text" id="o_field_input_28">
+                                          <span class="o_dropdown_button" draggable="false"></span>
+                                       </div>
+                                       <button class="fa fa-external-link btn btn-default o_external_button" draggable="false" tabindex="-1" type="button" style="display: none;"></button>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                <div class="o_notebook">
+                   <ul class="nav nav-tabs">
+                      <li class="active">
+                         <a data-toggle="tab" disable_anchor="true" href="#notebook_page_36" role="tab" aria-expanded="true">Hóa đơn</a>
+                      </li>
+                      <li class>
+                         <a data-toggle="tab" disable_anchor="true" href="#notebook_page_47" role="tab" aria-expanded="false">Thông tin khác</a>
+                      </li>
+                   </ul>
+                   <div class="tab-content nav nav-tabs">
+                     <div class="tab-pane active" id="notebook_page_36">
+                        <div class="o_field_one2many o_field_widget o_field_x2many o_field_x2many_list" name="invoice_line_ids">
+                           <div class="table-responsive" style="height: 100%;">
+                              <table class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
+                                   <thead>
+                                   <tr>
+                                       <th class="o_column_sortable" style="text-align: right;"></th>
+                                       <th class="o_column_sortable">STT</th>
+                                       <th class="o_column_sortable">Mã hàng</th>
+                                       <th class="o_column_sortable">Tên mặt hàng</th>
+                                       <th class="o_column_sortable">TK công nợ/Chi phí</th>
+                                       <th class="o_column_sortable">TK doanh thu</th>
+                                       <th class="o_column_sortable">Đơn vị tính</th>
+                                       <th class="o_column_sortable">Số lượng</th>
+                                       <th class="o_column_sortable">Đơn giá</th>
+                                       <th class="o_column_sortable">Mã kho</th>
+                                       <th class="o_column_sortable">Tỉ lệ chiết khấu(%)</th>
+                                       <th class="o_column_sortable">Chiết khấu</th>
+                                       <th class="o_column_sortable">Thành tiền</th>
+                                   </tr>
+                                   </thead>
+                                   <tbody>
+                                   <tr>
+                                       <td></td>
+                                       <td>1</td>
+                                       <td><div class="col-md-12"><span>TV1102</span><i ng-click="createNewProduct()" class="fa fa-search" style="float: right;"></i></div></td>
+                                       <td><span>Tivi Samsung SUHD</span></td>
+                                       <td><div class="col-md-12"><i ng-click="listAccounts()" class="fa fa-search" style="float: right;"></i></div></td>
+                                       <td><div class="col-md-12"><i ng-click="listAccounts()" class="fa fa-search" style="float: right;"></i></div></td>
+                                       <td><input class="o_field_char o_field_widget o_input" type="number" name="" style="background-color: #f9f9f9;"></td>
+                                       <td><input class="o_field_char o_field_widget o_input" type="number" name="" style="background-color: #f9f9f9;"></td>
+                                       <td><input class="o_field_char o_field_widget o_input" type="number" name="" style="background-color: #f9f9f9;"></td>
+                                       <td><div class="col-md-12"><i class="fa fa-search" style="float: right;"></i></div></td>
+                                       <td><input class="o_field_char o_field_widget o_input" type="number" name="" style="background-color: #f9f9f9;"></td>
+                                       <td>1991</td>
+                                       <td>1991</td>
+                                   </tr>
+                                   <tr><td colspan="13">&nbsp;</td></tr>
+                                   <tr><td colspan="13">&nbsp;</td></tr>
+                                   <tr><td colspan="13">&nbsp;</td></tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                        </div>
+                        <div class="o_group">
+                           <table class="o_group o_inner_group o_group_col_6">
+                              <tbody>
+                                 <tr>
+                                    <td style="width: 50%;">
+                                       <div class="oe_inline">
+                                          <div class="o_field_one2many o_field_widget o_field_x2many o_field_x2many_list" name="tax_line_ids">
+                                             <div class="table-responsive" style="height: 100%;">
+                                                   <table class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
+                                                      <thead>
+                                                         <tr>
+                                                            <th class="o_column_sortable">Mã thuế</th>
+                                                            <th class="o_column_sortable">TK thuế</th>
+                                                            <th class="o_column_sortable">Tổng thuế</th>
+                                                         </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                         <tr class="o_data_row o_selected_row" ng-if="addMoreTax">
+                                                            <td class="o_data_cell o_data_cell_custom o_required_modifier" style="width: 189px;">
+                                                               <div class="o_field_widget o_input_custom o_field_many2one o_required_modifier" style="padding: 0px;" name="account_id">
+                                                                  <div class="o_input_dropdown">
+                                                                     <input ng-click="listCodeTax()" class="o_input ui-autocomplete-input" type="text" autocomplete="off">
+                                                                     <span class="o_dropdown_button" draggable="false"></span>
+                                                                  </div>
+                                                               </div>
+                                                            </td>
+                                                            <td class="o_data_cell o_data_cell_custom o_required_modifier" style="width: 156px;">
+                                                               <div class="o_field_widget o_input_custom o_field_many2one o_required_modifier" style="padding: 0px;" name="account_id">
+                                                                  <div class="o_input_dropdown">
+                                                                     <input ng-click="listAccounts()" class="o_input ui-autocomplete-input" type="text" autocomplete="off">
+                                                                     <span class="o_dropdown_button" draggable="false"></span>
+                                                                  </div>
+                                                               </div>
+                                                            </td>
+                                                            <td class="o_data_cell o_data_cell_custom o_list_number" style="width: 142px;">
+                                                               <div class="o_field_monetary o_field_number o_input o_field_widget" name="amount">
+                                                               <input class="o_input o_input_custom" type="text" placeholder="">
+                                                               </div>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td colspan="4" class="o_field_x2many_list_row_add"><a ng-click="createNewTax()">Thêm mới</a></td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <table class="o_group o_inner_group oe_subtotal_footer oe_right o_group_col_6">
+                              <tbody>
+                                 <tr>
+                                    <td class="o_td_label">
+                                       <label class="o_form_label o_readonly_modifier" for="o_field_input_39">Số tiền trước thuế:</label>
+                                    </td>
+                                    <td style="width: 100%;">
+                                       <span class="o_field_monetary o_field_number o_field_widget o_readonly_modifier" name="amount_untaxed">0.00&nbsp;₫</span>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="o_td_label">
+                                       <label class="o_form_label o_readonly_modifier" for="o_field_input_40">Thuế</label>
+                                    </td>
+                                    <td style="width: 100%;">
+                                       <span class="o_field_monetary o_field_number o_field_widget o_readonly_modifier" name="amount_tax">0.00&nbsp;₫
+                                       </span>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="o_td_label">
+                                       <label class="o_form_label o_readonly_modifier" for="o_field_input_41">Tổng tiền:</label>
+                                    </td>
+                                    <td style="width: 100%;">
+                                       <span class="o_field_monetary o_field_number o_field_widget o_readonly_modifier oe_subtotal_footer_separator" name="amount_total">0.00&nbsp;₫
+                                       </span>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                      <div class="tab-pane" id="notebook_page_47">tab2</div>
+                   </div>
+                </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                    <span class="pull-right">
+                          Copyright by KN
+                    </span>
+                Last update: 11.10.2017
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <!-- Footer -->
+    <footer class="footer" ng-include="'views/common/footer.html'"></footer>
+</div>
+</div>
